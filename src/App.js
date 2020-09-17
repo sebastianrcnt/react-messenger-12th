@@ -1,7 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 
-function App() {
-	return <div></div>;
+import ChattingScreen from './components/chattingscreen';
+
+export default function App() {
+	return (
+		<Wrapper>
+			<ChattingScreen></ChattingScreen>
+		</Wrapper>
+	);
 }
 
-export default App;
+const Wrapper = styled.div`
+	height: 100vh;
+`;
