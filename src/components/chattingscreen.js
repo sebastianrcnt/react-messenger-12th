@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import Header from './header';
-import MessageSender from './messagesender';
+import Header from './Header';
+import MessageSender from './MessageSender';
 
 export default function ChattingScreen() {
   const [messageList, setMessageList] = useState([

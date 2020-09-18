@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ChattingScreen from './components/chattingscreen';
+import ChattingScreen from './components/ChattingScreen';
 
 export default function App() {
   return (
