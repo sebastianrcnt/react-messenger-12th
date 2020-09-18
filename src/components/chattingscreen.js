@@ -17,7 +17,7 @@ export default function ChattingScreen() {
     { user: true, content: 'ㅠㅠ' },
   ]);
 
-  const [message, setMessage] = useState({ user: false, content: '' });
+  const [message, setMessage] = useState({ content: '' });
 
   const handleAdd = (message) => {
     setMessageList([...messageList, message]);
@@ -53,9 +53,16 @@ export default function ChattingScreen() {
   const handleUser = (e) => {
     e.preventDefault();
 
-    return message.user
-      ? setMessage({ user: false, content: message.content })
-      : setMessage({ user: true, content: message.content });
+    setMessageList(
+      messageList.map((msg) => {
+        return { ...msg, user: !msg.user };
+      })
+    );
+
+    setMessage({
+      ...message,
+      // user: !message.user,
+    });
   };
 
   return (
