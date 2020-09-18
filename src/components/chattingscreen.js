@@ -98,6 +98,7 @@ const Chats = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
   padding: 100px 10px;
   background-color: #abc1d1;
   box-sizing: border-box;
@@ -105,7 +106,8 @@ const Chats = styled.div`
 `;
 const Wrapper = styled.div`
   width: 100%;
-  height: fit-content;
+  height: 100%;
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
 `;
