@@ -38,11 +38,7 @@ const Img = styled.img`
 `;
 
 const Wrapper = styled.div`
-  width: 100%;
-  position: fixed;
-  max-width: 37.5rem;
   height: 80px;
-  top: 0px;
   display: flex;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0.2rem 1rem 0 rgba(0, 0, 0, 0.25);

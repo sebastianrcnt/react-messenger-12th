@@ -38,8 +38,6 @@ const Wrapper = styled.form`
   max-width: 37.5rem;
   flex-direction: row;
   justify-content: space-around;
-  position: fixed;
-  bottom: 0px;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 10px;
   box-sizing: border-box;

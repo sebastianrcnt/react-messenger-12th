@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Header from './Header';
@@ -38,8 +38,14 @@ export default function ChattingScreen() {
       ...message,
       content: '',
     });
-    console.log(messageList);
   };
+
+  useEffect(() => {
+    document.getElementById('chats').scrollBy({
+      behavior: 'smooth',
+      top: document.getElementById('chats').scrollHeight,
+    });
+  }, [messageList]);
 
   const handleUser = (e) => {
     e.preventDefault();
@@ -52,18 +58,18 @@ export default function ChattingScreen() {
   return (
     <Wrapper>
       <Header {...{ message }} {...{ handleUser }}></Header>
-      <Chats>
-        {messageList.map((message) => {
+      <Chats id="chats">
+        {messageList.map((message, index) => {
           if (message.user)
             return (
-              <MessageRow sending={false}>
+              <MessageRow sending={false} key={index}>
                 <Img src="https://img.techpowerup.org/200908/eun.png" />
                 <Message>{message.content}</Message>
               </MessageRow>
             );
           else
             return (
-              <MessageRow sending={true}>
+              <MessageRow sending={true} key={index}>
                 <Message>{message.content}</Message>
                 <Img src="https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png" />
               </MessageRow>
@@ -106,21 +112,21 @@ const Img = styled.img`
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 `;
 const Chats = styled.div`
-  max-width: 37.5rem;
-  width: 100%;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  padding: 100px 10px;
   background-color: #abc1d1;
   box-sizing: border-box;
-  box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.25);
 `;
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
+  box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.25);
 `;
