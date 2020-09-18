@@ -13,4 +13,7 @@ export default function App() {
 
 const Wrapper = styled.div`
   height: 100vh;
+  & * {
+    font-family: sans-serif;
+  }
 `;
