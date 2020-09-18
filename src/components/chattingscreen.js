@@ -73,9 +73,10 @@ export default function ChattingScreen() {
 const MessageRow = styled.div`
   display: flex;
   width: 100%;
-  height: 100%;
   justify-content: ${(props) => (props.sending ? 'flex-end' : 'flex-start')};
+  align-items: center;
 `;
+
 const Message = styled.div`
   text-align: center;
   background-color: white;
@@ -83,6 +84,10 @@ const Message = styled.div`
   padding: 8px;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Img = styled.img`
