@@ -2,12 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function MessageSender(props) {
-  const { handleMessageChange } = props;
-  const { handleSubmit } = props;
+  const { handleMessageChange, handleSubmit, message } = props;
 
   return (
     <Wrapper>
-      <Input name="content" onChange={handleMessageChange}></Input>
+      <Input
+        name="content"
+        onChange={handleMessageChange}
+        value={message.content}
+      ></Input>
       <Button onClick={handleSubmit}>전송</Button>
     </Wrapper>
   );
@@ -28,7 +31,7 @@ const Button = styled.button`
   font-size: 15px;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
   display: flex;
   width: 100%;
   height: 70px;

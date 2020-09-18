@@ -34,6 +34,10 @@ export default function ChattingScreen() {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleAdd(message);
+    setMessage({
+      ...message,
+      content: '',
+    });
     console.log(messageList);
   };
 
@@ -66,7 +70,11 @@ export default function ChattingScreen() {
             );
         })}
       </Chats>
-      <MessageSender {...{ handleMessageChange }} {...{ handleSubmit }} />
+      <MessageSender
+        {...{ handleMessageChange }}
+        {...{ handleSubmit }}
+        message={message}
+      />
     </Wrapper>
   );
 }
