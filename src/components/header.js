@@ -2,20 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function Header(props) {
-  const { message } = props;
-  const { handleUser } = props;
+  const { handleUserClick, currentUser } = props;
 
   return (
     <Wrapper>
-      <Button onClick={handleUser}>
-        {message.user ? (
-          <Img src="https://img.techpowerup.org/200908/eun.png" />
-        ) : (
-          <Img src="https://img.techpowerup.org/200908/NjRiY2JjOGU5YzQz.png" />
-        )}
+      <Button onClick={handleUserClick}>
+        <Img src={currentUser.imgSrc} />
       </Button>
       <Column>
-        <UserName> {message.user ? '고은' : '정쿨'}</UserName>
+        <UserName>{currentUser.name}</UserName>
         <UserOn>현재 활동중</UserOn>
       </Column>
     </Wrapper>
