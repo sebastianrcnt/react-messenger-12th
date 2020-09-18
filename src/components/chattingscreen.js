@@ -33,6 +33,9 @@ export default function ChattingScreen() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!message.content) {
+      return;
+    }
     handleAdd(message);
     setMessage({
       ...message,
